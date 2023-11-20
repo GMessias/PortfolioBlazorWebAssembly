@@ -1,0 +1,21 @@
+﻿<img src=@nomeSvg alt=@Alt style=@styleCompleto class="ps-2" />
+
+@code {
+    [Parameter] public string NomeSvg { get; set; } = string.Empty;
+    [Parameter] public string Alt { get; set; } = string.Empty;
+    [Parameter] public string Height { get; set; } = string.Empty;
+    [Parameter] public string Width { get; set; } = string.Empty;
+
+    private string? nomeSvg;
+    private string? height;
+    private string? width;
+    private string? styleCompleto;
+
+    protected override void OnParametersSet()
+    {
+        nomeSvg = "/img/" + NomeSvg + ".svg";
+        height = "height:" + Height + "rem";
+        width = "width:" + Width + "rem";
+        styleCompleto = height + "; " + width;
+    }
+}

@@ -1,0 +1,21 @@
+﻿<Card Style="width:18rem">
+    <CardHeader>
+        @Header
+    </CardHeader>
+    <CardBody>
+        <CardTitle>@Title</CardTitle>
+        <CardSubTitle>@SubTitle</CardSubTitle>
+        <CardText>@Text</CardText>
+    </CardBody>
+    <CardFooter>
+        @Footer
+    </CardFooter>
+</Card>
+
+@code {
+    [Parameter] public string Header { get; set; } = "Nome da empresa";
+    [Parameter] public string Title { get; set; } = "Cargo ocupado";
+    [Parameter] public string SubTitle { get; set; } = "MM/YYYY - Atualmente ou MM/YYYY";
+    [Parameter] public string Text { get; set; } = "Detalhes sobre o período trabalhado.";
+    [Parameter] public string Footer { get; set; } = "Tecnologias e ferramentas.";
+}
